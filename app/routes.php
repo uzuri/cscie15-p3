@@ -20,7 +20,7 @@ Route::get('/', function()
 	$alldata['uri'] = "/";
 	if (isset($_SERVER['HTTP_X_FORWARDED_HOST']))
 	{
-		$alldata['uri'] = $_SERVER['HTTP_X_FORWARDED_HOST'];
+		$alldata['uri'] = "http://" . $_SERVER['HTTP_X_FORWARDED_HOST'];
 	}
 	
 	print_r($_SERVER);
@@ -56,7 +56,7 @@ Route::post('/', function()
 	$alldata['uri'] = "/";
 	if (isset($_SERVER['HTTP_X_FORWARDED_HOST']))
 	{
-		$alldata['uri'] = $_SERVER['HTTP_X_FORWARDED_HOST'];
+		$alldata['uri'] = "http://" . $_SERVER['HTTP_X_FORWARDED_HOST'];
 	}
 	return View::make('helperapp', $alldata);
 });
