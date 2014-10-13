@@ -15,6 +15,7 @@ Route::get('/', function()
 {
 	$alldata['paras'] = "";
 	$alldata['users'] = array();
+	$alldata['uri'] = Request::path();
 	return View::make('helperapp', $alldata);
 });
 
@@ -22,7 +23,6 @@ Route::get('/', function()
 Route::post('/', function()
 {
 	$data = Input::all();
-	 var_dump($data);
 	
 	$alldata = array();
 	
@@ -43,5 +43,6 @@ Route::post('/', function()
 	
 	$alldata['users'] = $allusers;
 	
+	$alldata['uri'] = Request::path();
 	return View::make('helperapp', $alldata);
 });

@@ -38,7 +38,7 @@
 
 <p>This tool will provide you with either a list of users or <a href="http://en.wikipedia.org/wiki/Lorem_ipsum">pseudo-latin</a> text to aid you in building out designs or web tools. </p>
 
-{{ Form::open(array('url' => 'Request::path()')) }}
+{{ Form::open(array('url' => $uri)) }}
 
 <p>Ready to get started?  Give me 
     {{ Form::input('number', 'paras', 0, array('min' => 0, 'max' => 5)) }}
