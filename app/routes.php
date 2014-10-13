@@ -16,6 +16,9 @@ Route::get('/', function()
 	$alldata['paras'] = "";
 	$alldata['users'] = array();
 	$alldata['uri'] = "http://p3.cscie15.theredsetter.com/";
+	
+	print_r($_SERVER);
+	
 	return View::make('helperapp', $alldata);
 });
 
