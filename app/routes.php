@@ -23,8 +23,6 @@ Route::get('/', function()
 		$alldata['uri'] = "http://" . $_SERVER['HTTP_X_FORWARDED_HOST'];
 	}
 	
-	print_r($_SERVER);
-	
 	return View::make('helperapp', $alldata);
 });
 
