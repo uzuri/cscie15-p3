@@ -15,3 +15,30 @@ Route::get('/', function()
 {
 	return View::make('helperapp');
 });
+
+
+Route::post('/', function()
+{
+	$data = Input::all();
+	
+	$alldata = array();
+	
+	$generator = new Badcow\LoremIpsum\Generator();
+	$paragraphs = $generator->getParagraphs($data['paras']);
+	
+	$alldata['paras'] = implode('<p>', $paragraphs);
+	
+	$faker = Faker\Factory::create();
+	
+	$allusers = array();
+	for ($i=0; $i < $data['users']; $i++) 
+	{
+		$tempuser = array();
+		$tempuser['name'] = $faker->name;
+		$allusers[] = $tempuser;
+	}
+	
+	$alldata['users'] = $allusers;
+	
+	return View::make('helperapp', $alldata);
+});

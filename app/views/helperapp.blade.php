@@ -4,32 +4,32 @@
 	<meta charset="UTF-8">
 	<title>Developer's Best Friend</title>
 	<style>
-		@import url(//fonts.googleapis.com/css?family=Lato:700);
-
-		body {
-			margin:0;
-			font-family:'Lato', sans-serif;
-			text-align:center;
-			color: #999;
+		body
+		{
+			text-align: center;
 		}
-
-		.welcome {
-			width: 300px;
-			height: 200px;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			margin-left: -150px;
-			margin-top: -100px;
-		}
-
-		a, a:visited {
-			text-decoration:none;
-		}
-
-		h1 {
+		
+		h1 
+		{
 			font-size: 32px;
 			margin: 16px 0 0 0;
+			text-align: center;
+		}
+		
+		.paras
+		{
+			margin: 4%;
+			width: 40%;
+			float: left;
+			text-align: left;
+		}
+		
+		.users
+		{
+			margin: 4%;
+			width: 40%;
+			float: right;
+			text-align: left;
 		}
 	</style>
 </head>
@@ -41,10 +41,10 @@
 {{ Form::open(array('url' => '/')) }}
 
 <p>Ready to get started?  Give me 
-    {{ Form::input('number', 'paras', 1, array('min' => 1, 'max' => 5)) }}
+    {{ Form::input('number', 'paras', 0, array('min' => 0, 'max' => 5)) }}
     {{ Form::label('paras', 'paragraphs') }}
-    or 
-    {{ Form::input('number', 'users', 1, array('min' => 1, 'max' => 50)) }}
+    and/or 
+    {{ Form::input('number', 'users', 0, array('min' => 0, 'max' => 50)) }}
     {{ Form::label('users', 'users') }}.
 </p>
 
@@ -55,6 +55,18 @@
 {{ Form::close() }}
 
 </form>
+
+
+<div class="paras">
+{{ $paras }}
+</div>
+
+<div class="users">
+@foreach ($users as $user)
+    <p>{{ $user['name'] }}</p>
+@endforeach
+</div>
+
 
 </body>
 </html>
