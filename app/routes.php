@@ -15,7 +15,13 @@ Route::get('/', function()
 {
 	$alldata['paras'] = "";
 	$alldata['users'] = array();
-	$alldata['uri'] = "http://p3.cscie15.theredsetter.com/";
+	
+	// Deal with proxied domain
+	$alldata['uri'] = "/";
+	if (isset($_SERVER['HTTP_X_FORWARDED_HOST']))
+	{
+		$alldata['uri'] = $_SERVER['HTTP_X_FORWARDED_HOST'];
+	}
 	
 	print_r($_SERVER);
 	
@@ -46,6 +52,11 @@ Route::post('/', function()
 	
 	$alldata['users'] = $allusers;
 	
-	$alldata['uri'] = "http://p3.cscie15.theredsetter.com/";
+	// Deal with proxied domain
+	$alldata['uri'] = "/";
+	if (isset($_SERVER['HTTP_X_FORWARDED_HOST']))
+	{
+		$alldata['uri'] = $_SERVER['HTTP_X_FORWARDED_HOST'];
+	}
 	return View::make('helperapp', $alldata);
 });
