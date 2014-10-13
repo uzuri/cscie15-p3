@@ -15,7 +15,7 @@ Route::get('/', function()
 {
 	$alldata['paras'] = "";
 	$alldata['users'] = array();
-	$alldata['uri'] = $_SERVER['HTTP_HOST'];
+	$alldata['uri'] = $_SERVER['SERVER_NAME'];
 	return View::make('helperapp', $alldata);
 });
 
@@ -43,6 +43,6 @@ Route::post('/', function()
 	
 	$alldata['users'] = $allusers;
 	
-	$alldata['uri'] = $_SERVER['HTTP_HOST'];
+	$alldata['uri'] = $_SERVER['SERVER_NAME'];
 	return View::make('helperapp', $alldata);
 });
