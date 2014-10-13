@@ -56,9 +56,8 @@
 
 </form>
 
-
 <div class="paras">
-{{ $paras }}
+{{$paras}}
 </div>
 
 <div class="users">

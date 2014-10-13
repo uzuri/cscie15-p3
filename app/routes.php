@@ -13,7 +13,9 @@
 
 Route::get('/', function()
 {
-	return View::make('helperapp');
+	$alldata['paras'] = "";
+	$alldata['users'] = array();
+	return View::make('helperapp', $alldata);
 });
 
 
