@@ -22,6 +22,7 @@ Route::get('/', function()
 Route::post('/', function()
 {
 	$data = Input::all();
+	 var_dump($data);
 	
 	$alldata = array();
 	
