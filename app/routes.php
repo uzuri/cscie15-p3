@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	$alldata['paras'] = "";
+	$alldata['paras'] = array();
 	$alldata['users'] = array();
 	
 	// Deal with proxied domain
