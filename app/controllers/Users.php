@@ -19,6 +19,10 @@ class Users
 		{
 			$tempuser = array();
 			$tempuser['name'] = $faker->name;
+			$tempuser['email'] = $faker->safeEmail;
+			$tempuser['username'] = $faker->userName;
+			$tempuser['phone'] = $faker->phoneNumber;
+			$tempuser['image'] = $faker->imageUrl(100, 100, 'cats');
 			$this->users[] = $tempuser;
 		}
 	}
