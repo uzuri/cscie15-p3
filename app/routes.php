@@ -13,8 +13,6 @@
 
 Route::get('/', function()
 {
-	$alldata['paras'] = array();
-	$alldata['users'] = array();
 	$alldata['data_paras'] = 0;
 	$alldata['data_users'] = 0;
 	
