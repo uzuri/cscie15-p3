@@ -31,7 +31,9 @@
 </form>
 
 <div class="paras">
-{{$paras}}
+@foreach ($paras as $para)
+    <p>{{ $para }}</p>
+@endforeach
 </div>
 
 <div class="users">

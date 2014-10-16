@@ -16,11 +16,9 @@ Route::get('/', function()
 	$alldata['paras'] = "";
 	$alldata['users'] = array();
 	
-	
 	// Deal with proxied domain
-	// This isn't ideal, but it works
-	$test = new UriManager();
-	$alldata['uri'] = $test->getUri();
+	$uri = new UriManager();
+	$alldata['uri'] = $uri->getUri();
 	
 	return View::make('helperapp', $alldata);
 });
@@ -32,10 +30,8 @@ Route::post('/', function()
 	
 	$alldata = array();
 	
-	$generator = new Badcow\LoremIpsum\Generator();
-	$paragraphs = $generator->getParagraphs($data['paras']);
-	
-	$alldata['paras'] = implode('<p>', $paragraphs);
+	$paragraphs = new Paragraphs($data['paras']);
+	$alldata['paras'] = $paragraphs->getParagraphs();
 	
 	$faker = Faker\Factory::create();
 	
@@ -50,7 +46,8 @@ Route::post('/', function()
 	$alldata['users'] = $allusers;
 	
 	// Deal with proxied domain
-	$test = new UriManager();
-	$alldata['uri'] = $test->getUri();
+	$uri = new UriManager();
+	$alldata['uri'] = $uri->getUri();
+	
 	return View::make('helperapp', $alldata);
 });

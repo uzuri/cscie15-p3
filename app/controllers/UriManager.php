@@ -3,11 +3,12 @@
 
 class UriManager
 {
-	// Properties
+	// Default URI is root
 	private $uri = "/";
 	
-	// Methods
-	
+	/**
+	  * Set the URI on initialization
+	  */
 	function __construct() 
 	{
 		if (isset($_SERVER['HTTP_X_FORWARDED_HOST']))
@@ -16,6 +17,10 @@ class UriManager
 		}
 	}
 	
+	/**
+	  *  getUri
+	  *  Basic getter; returns currently set URI
+	  */
 	public function getUri() 
 	{
 		return $this->uri;
