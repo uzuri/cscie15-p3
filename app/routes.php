@@ -16,12 +16,11 @@ Route::get('/', function()
 	$alldata['paras'] = "";
 	$alldata['users'] = array();
 	
+	
 	// Deal with proxied domain
-	$alldata['uri'] = "/";
-	if (isset($_SERVER['HTTP_X_FORWARDED_HOST']))
-	{
-		$alldata['uri'] = "http://" . $_SERVER['HTTP_X_FORWARDED_HOST'];
-	}
+	// This isn't ideal, but it works
+	$test = new UriMAnager();
+	$alldata['uri'] = $test->getUri();
 	
 	return View::make('helperapp', $alldata);
 });
@@ -51,10 +50,7 @@ Route::post('/', function()
 	$alldata['users'] = $allusers;
 	
 	// Deal with proxied domain
-	$alldata['uri'] = "/";
-	if (isset($_SERVER['HTTP_X_FORWARDED_HOST']))
-	{
-		$alldata['uri'] = "http://" . $_SERVER['HTTP_X_FORWARDED_HOST'];
-	}
+	$test = new UriMAnager();
+	$alldata['uri'] = $test->getUri();
 	return View::make('helperapp', $alldata);
 });

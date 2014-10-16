@@ -3,35 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Developer's Best Friend</title>
-	<style>
-		body
-		{
-			text-align: center;
-		}
-		
-		h1 
-		{
-			font-size: 32px;
-			margin: 16px 0 0 0;
-			text-align: center;
-		}
-		
-		.paras
-		{
-			margin: 4%;
-			width: 40%;
-			float: left;
-			text-align: left;
-		}
-		
-		.users
-		{
-			margin: 4%;
-			width: 40%;
-			float: right;
-			text-align: left;
-		}
-	</style>
+	
+	<style media="screen" type="text/css">@import "/css/styles.css";</style>
+
 </head>
 <body>
 <h1>P3: Developer's Best Friend</h1>
