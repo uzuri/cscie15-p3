@@ -10,10 +10,9 @@ class UriManager
 	
 	function __construct() 
 	{
-		print_r($_SERVER['HTTP_X_FORWARDED_HOST']);
 		if (isset($_SERVER['HTTP_X_FORWARDED_HOST']))
 		{
-			$uri = "http://" . $_SERVER['HTTP_X_FORWARDED_HOST'];
+			$this->uri = "http://" . $_SERVER['HTTP_X_FORWARDED_HOST'];
 		}
 	}
 	
