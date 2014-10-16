@@ -19,7 +19,7 @@ Route::get('/', function()
 	
 	// Deal with proxied domain
 	// This isn't ideal, but it works
-	$test = new UriMAnager();
+	$test = new UriManager();
 	$alldata['uri'] = $test->getUri();
 	
 	return View::make('helperapp', $alldata);
@@ -50,7 +50,7 @@ Route::post('/', function()
 	$alldata['users'] = $allusers;
 	
 	// Deal with proxied domain
-	$test = new UriMAnager();
+	$test = new UriManager();
 	$alldata['uri'] = $test->getUri();
 	return View::make('helperapp', $alldata);
 });
