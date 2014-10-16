@@ -46,5 +46,5 @@ Route::post('/', function()
 	$alldata['data_paras'] = $data['paras'];
 	$alldata['data_users'] = $data['users'];
 	
-	return View::make('helperapp', $alldata);
+	return View::make('results', $alldata);
 });
