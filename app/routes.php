@@ -15,6 +15,8 @@ Route::get('/', function()
 {
 	$alldata['paras'] = array();
 	$alldata['users'] = array();
+	$alldata['data_paras'] = 0;
+	$alldata['data_users'] = 0;
 	
 	// Deal with proxied domain
 	$uri = new UriManager();
@@ -39,6 +41,10 @@ Route::post('/', function()
 	// Deal with proxied domain
 	$uri = new UriManager();
 	$alldata['uri'] = $uri->getUri();
+	
+	// Pass through anything we might want to retain on the form side
+	$alldata['data_paras'] = $data['paras'];
+	$alldata['data_users'] = $data['users'];
 	
 	return View::make('helperapp', $alldata);
 });

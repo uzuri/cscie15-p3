@@ -15,10 +15,10 @@
 {{ Form::open(array('url' => $uri)) }}
 
 <p>Ready to get started?  Give me 
-    {{ Form::input('number', 'paras', 0, array('min' => 0, 'max' => 5)) }}
+    {{ Form::input('number', 'paras', $data_paras, array('min' => 0, 'max' => 5)) }}
     {{ Form::label('paras', 'paragraphs') }}
     and/or 
-    {{ Form::input('number', 'users', 0, array('min' => 0, 'max' => 50)) }}
+    {{ Form::input('number', 'users', $data_users, array('min' => 0, 'max' => 50)) }}
     {{ Form::label('users', 'users') }}.
 </p>
 
