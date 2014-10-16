@@ -7,7 +7,7 @@ class Paragraphs
 	private $paragraphs = array();
 	
 	/**
-	  * Set the URI on initialization
+	  * Gets paras on init
 	  */
 	function __construct($numparas) 
 	{	
@@ -23,14 +23,4 @@ class Paragraphs
 	{
 		return $this->paragraphs;
 	}   
-	
-	/**
-	  *  getPrettyParagraphs
-	  *  Basic getter; returns paragraphs collapsed to <p></p>-separated string
-	  */
-	public function getPrettyParagraphs() 
-	{
-		return implode('<p>', $this->paragraphs);
-	}   
-	
 }

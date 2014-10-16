@@ -32,18 +32,9 @@ Route::post('/', function()
 	
 	$paragraphs = new Paragraphs($data['paras']);
 	$alldata['paras'] = $paragraphs->getParagraphs();
-	
-	$faker = Faker\Factory::create();
-	
-	$allusers = array();
-	for ($i=0; $i < $data['users']; $i++) 
-	{
-		$tempuser = array();
-		$tempuser['name'] = $faker->name;
-		$allusers[] = $tempuser;
-	}
-	
-	$alldata['users'] = $allusers;
+
+	$users = new Users($data['users']);
+	$alldata['users'] = $users->getUsers();
 	
 	// Deal with proxied domain
 	$uri = new UriManager();
