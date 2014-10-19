@@ -11,6 +11,12 @@ class Paragraphs
 	  */
 	function __construct($numparas) 
 	{	
+		
+		if (!is_numeric($numparas) || $numparas > 5 || $numparas < 0)
+		{
+			$numparas = 0;
+		}
+		
 		$generator = new Badcow\LoremIpsum\Generator();
 		$this->paragraphs = $generator->getParagraphs($numparas);
 	}

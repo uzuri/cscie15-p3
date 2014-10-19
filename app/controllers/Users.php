@@ -15,6 +15,11 @@ class Users
 	{	
 		$faker = Faker\Factory::create();
 		
+		if (!is_numeric($numusers) || $numusers > 50 || $numusers < 0)
+		{
+			$numusers = 0;
+		}
+		
 		for ($i=0; $i < $numusers; $i++) 
 		{
 			$tempuser = array();
